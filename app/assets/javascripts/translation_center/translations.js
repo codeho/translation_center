@@ -168,6 +168,8 @@ function editableTranslations(){
       tooltip     : 'click to add or edit your translation',
       callback : function(data, settings) {
         data = $.parseJSON(data);
+        
+        
         $(this).text(data.value);
         if(Filter.key() == 'untranslated')
         {
@@ -208,6 +210,7 @@ function editableTranslations(){
 
       
     });
+
     $(this).text($.trim($(this).text()));
   });
 

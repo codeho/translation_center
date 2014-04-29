@@ -14,7 +14,10 @@
     %p
       %b
         %em
-          = t(translation_key.name)
+          - if !translation_key.translations.accepted.in(to_lang).last.nil?
+            = translation_key.translations.accepted.in(to_lang).last.value
+          - else
+            = t(translation_key.name)
       %span
         %em.created_time
           = t('.created_on')

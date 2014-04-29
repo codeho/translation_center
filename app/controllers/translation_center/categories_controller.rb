@@ -1,6 +1,7 @@
 require_dependency "translation_center/application_controller"
 
 module TranslationCenter
+  TranslationKey::PER_PAGE = 70
   class CategoriesController < ApplicationController
     before_filter :can_admin?, only: [ :destroy ]
     before_filter :set_page_number, except: :destroy

@@ -12,6 +12,7 @@ TranslationCenter::Engine.routes.draw do
 
   resources :translation_keys, except: :create do
     post :update_translation
+    get :get_translation_value
     get :translations
     collection do 
       get :search
@@ -21,6 +22,8 @@ TranslationCenter::Engine.routes.draw do
   resources :categories  do
     get :more_keys
   end
+
+
 
   get '/dashboard' => 'center#dashboard', as: :dashboard
   get '/search_activity' => 'center#search_activity', as: :search_activity
